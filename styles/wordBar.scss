@@ -1,0 +1,33 @@
+.wordBar {
+  &__wrapper {
+    position: fixed;
+    background-color: #FB0654;
+    height: 40px;
+    letter-spacing: 0.7px;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__button {
+    display: flex;
+    flex: 2;
+    color: #ffffffab;
+    justify-content: center;
+    border-right: 1px solid #ffffff47;
+    padding: 10px;
+  }
+
+  &__button--short {
+    flex: 1;
+  }
+
+  &__word {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
