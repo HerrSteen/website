@@ -1,0 +1,56 @@
+.post-wrap {
+  background: #fff;
+  box-shadow: 0 1px 2px #ccc;
+  padding: 15px;
+  margin: 0 20px 20px;
+}
+
+.post-wrap img {
+  max-width: 100%;
+}
+
+.wrap p {
+  word-wrap: break-word;
+}
+
+.header {
+  margin-bottom: 5px !important;
+  cursor: pointer;
+  text-align: left;
+}
+
+.statusLine {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.show {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}
+
+.txt {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.badge {
+  background-color: #e0dede;
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+.divider {
+  margin: 15px 0 !important;
+}
+
+.tickerLabel {
+  /* margin-left: 0; */
+  margin-bottom: 5px !important;
+}
