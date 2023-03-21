@@ -12,4 +12,14 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/reddit', function(req, res, next) {
+  res.render('reddit', { 
+    layout: false,
+    title: 'Pnny - Reddit',
+    reactData: {
+      route: 'reddit',
+    }
+  });
+});
+
 module.exports = router;
