@@ -2,18 +2,25 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['./app/main.js', './styles/editor/editor-main.scss'],
+  entry : {
+    editor: ['./app/main.js', './styles/editor/editor-main.scss'],
+    reddit: ['./app/main.js', './styles/reddit/reddit-main.scss'],
+  },
   output: {
     path: path.resolve(__dirname, 'public/compiled'),
     filename: '[name].js',
+    clean: true,
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.scss'],
+  },  
   plugins: [new MiniCssExtractPlugin({
     filename: "[name].css",
   })],  
   module: {
     rules: [
         {
-            test: /\.js?$/,
+            test: /\.(js|jsx)$/,
             loader: "babel-loader",
             exclude: /node_modules/
         },
