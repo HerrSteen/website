@@ -3,11 +3,11 @@ const mapper = require('../reddit/mapper')
 const sortTickers = require('../reddit/sortTickers')
 
 const r = new Snoowrap({
-  userAgent: 'webb:pnny.se:v1.0.0 (by u/ronnyDealder)',
-  clientId: 'L-9vix_JbmidjA',
-  clientSecret: 'Ff3vH0vAPEWbYTEStbuZrOJdY73fiA',
+  userAgent: process.env.USER_AGENT,
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
   username: process.env.REDDIT_USER,
-  password: process.env.REDDIT_PASSWORD
+  password: process.env.REDDIT_PASSWORD,
 })
 
 const getPosts = () => {
