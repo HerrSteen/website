@@ -34,7 +34,7 @@ const MenuComponent = ({ tickers, filter, setFilter, setSearchWord }) => {
   }
 
   return (
-    <div className="menu-wrap">
+    <div className="menuWrap">
       <Menu vertical size='small'>
         <Menu.Item>
           <Input icon='search' placeholder='Search ticker' onChange={onChange} onKeyPress={keyPressed} value={inputText} />

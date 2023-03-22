@@ -25,10 +25,10 @@ const ListItem = ({item, filter, setFilter}) => {
 
   return (
     <>
-    <div className="post-wrap">
-      <Header as='h4' className="post-title" onClick={() => setReadMore(!readMore)}>{ title }</Header>
-      <div className="post-status">
-      <div className="post-info">
+    <div className="postWrap">
+      <Header as='h4' className="postTitle" onClick={() => setReadMore(!readMore)}>{ title }</Header>
+      <div className="postStatus">
+      <div className="postInfo">
         <Label size="small" className="tickerLabel"><Icon name='clock' />{ createdDate }</Label>
         <Label size="small" className="tickerLabel"><Icon name='heart' color='red' />{ upvoteRatio }%</Label>
         <Label size="small" className="tickerLabel"><Icon name='comment' color='grey' />{ numOfComments }</Label>

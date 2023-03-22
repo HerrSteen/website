@@ -1,12 +1,12 @@
-.post-wrap {
+.postWrap {
   background: #fff;
   box-shadow: 0 1px 2px #ccc;
   padding: 15px;
   margin: 0 20px 20px;
-}
 
-.post-wrap img {
-  max-width: 100%;
+  img {
+    max-width: 100%;
+  }
 }
 
 .wrap p {
@@ -51,6 +51,5 @@
 }
 
 .tickerLabel {
-  /* margin-left: 0; */
   margin-bottom: 5px !important;
 }

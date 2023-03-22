@@ -27,9 +27,13 @@ a {
   justify-content: space-between;
   max-width: 880px;
   margin: 20px auto;
+
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
 }
 
-.postWrap {
+.contentWrap {
   width: 100%;
 }
 
@@ -37,28 +41,19 @@ a {
   margin: 0 20px 20px  20px !important;
 }
 
-@media screen and (max-width: 700px) {
-  .wrapper {
-    display: block;
-  }
-}
-
 //menu
-.menu-wrap {
+.menuWrap {
   position: sticky;
   align-self: flex-start;
   top: 10px;
-}
 
-@media screen and (max-width: 700px) {
-  .wrap {
-    position: relative;
-    margin: 0 20px 27px;
+  @media screen and (max-width: 700px) {
+      position: relative;
+      margin: 0 20px 27px;
   }
 }
 
-//loading
-.loading-wrap {
+.loadingWrap {
   position: fixed;
 
   max-width: 700px;
@@ -66,26 +61,21 @@ a {
   transform: translateX(-50%);
   color: #847f7f;
   top: 10%;
-}
 
-.loading-wrap p {
-  font-style: italic;
-  font-size: 26px;
-}
-
-.loader {
-  margin-top: 30px !important;
-}
-
-@media screen and (max-width: 500px) {
-  .quote {
+  @media screen and (max-width: 500px) {
     top: 3%;
     padding: 20px;
     left: 0;
     transform: translateX(0);
   }
 
-  .quote p {
-    font-size: 20px;
+  p {
+    font-style: italic;
+    font-size: 26px;
+  }
+
+  .loader {
+    margin-top: 30px !important;
   }
 }
+

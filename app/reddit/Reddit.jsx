@@ -51,12 +51,11 @@ function Index() {
     <div>
       <div className="wrapper">
         <Menu tickers={tickers} filter={filter} setFilter={setFilter} setSearchWord={setSearchWord} />
-        <div className="postWrap">
-        { searchWord && <Label className="searchLabel">{searchWord}<Icon name='delete' onClick={clearSearch} />
-        </Label> }
-        {posts.map((item) => <Post item={item} filter={filter} setFilter={setFilter} key={item.title} />)}
+        <div className="contentWrap">
+          { searchWord && <Label className="searchLabel">{searchWord}<Icon name='delete' onClick={clearSearch} />
+          </Label> }
+          {posts.map((item) => <Post item={item} filter={filter} setFilter={setFilter} key={item.title} />)}
         </div>
-
       </div>
     </div>
   )

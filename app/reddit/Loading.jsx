@@ -3,7 +3,7 @@ import { Loader } from 'semantic-ui-react'
 
 const Loading = () => {
   return (
-    <div className="loading-wrap">
+    <div className="loadingWrap">
       <div>
         <p>
           Pengar är som olja, när den passerar genom dina händer blir det alltid

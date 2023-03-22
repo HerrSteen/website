@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { 
     layout: false,
-    title: 'Pnny - Editor',
+    title: 'Editor',
     reactData: {
       route: 'editor',
     }
@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 router.get('/reddit', function(req, res, next) {
   res.render('reddit', { 
     layout: false,
-    title: 'Pnny - Reddit',
+    title: 'Reddit',
     reactData: {
       route: 'reddit',
     }
