@@ -20,8 +20,8 @@ const ListItem = ({item, filter, setFilter}) => {
 
   const [readMore, setReadMore] = useState(false)
 
-  const readMoreStyle = readMore ? "show" : "hide"
-  const dividerStyle = readMore ? "divider" : "hide"
+  const readMoreStyle = readMore ? 'show' : 'hide'
+  const dividerStyle = readMore ? 'divider' : 'hide'
 
   return (
     <>
