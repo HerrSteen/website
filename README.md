@@ -13,11 +13,11 @@ npm start
 ## Project
 So far this project is based on two other projects. 
 
-###Editor
+### Editor
 Editor meant for journaling. I built this editor when i found it hard to find an text-editor that doesnt save your data in any way.
 URL: http://localhost:3000/
 
-###Reddit stock scraper
+### Reddit stock scraper
 This scraper will search subreddits for stock tickers (strings that start with a $) and display the post.
 For this to work you need to generate your own api key and add them to the .env file
 URL: http://localhost:3000/reddit
