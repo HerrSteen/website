@@ -5,7 +5,7 @@ This is my collection of different projects.
 ## TODO
 - Add tests
 - Convert to typescript
-
+- Add endpoint for reddit search
 
 ## Installation
 ```
