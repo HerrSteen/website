@@ -7,6 +7,9 @@
     "webpack": "webpack",
     "webpack-watch": "webpack --watch"
   },
+  "nodemonConfig": {
+    "ignore": ["*.json"]
+  },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
@@ -20,6 +23,7 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
+    "lowdb": "^6.0.0",
     "markdown-it": "^13.0.1",
     "mini-css-extract-plugin": "^2.7.5",
     "moment": "^2.29.4",
@@ -30,6 +34,7 @@
     "sass": "^1.59.3",
     "sass-loader": "^13.2.0",
     "semantic-ui-react": "^2.1.4",
+    "simple-json-db": "^2.0.0",
     "snoowrap": "^1.23.0",
     "style-loader": "^3.3.2",
     "stylus": "0.54.5"

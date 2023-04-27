@@ -1,0 +1,20 @@
+{
+    "instrumentStatus": [
+        {
+            "instrument": "DAX",
+            "status": "bull"
+        },
+        {
+            "instrument": "DAX",
+            "status": "bull"
+        },
+        {
+            "instrument": "DAX",
+            "status": "bull"
+        },
+        {
+            "instrument": "DAX",
+            "status": "bull"
+        }
+    ]
+}

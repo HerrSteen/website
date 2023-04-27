@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     editor: ['./app/main.js', './styles/editor/editor-main.scss'],
     reddit: ['./app/main.js', './styles/reddit/reddit-main.scss'],
+    tradingview: ['./app/main.js', './styles/tradingview/tradingview-main.scss'],
   },
   output: {
     path: path.resolve(__dirname, 'public/compiled'),
