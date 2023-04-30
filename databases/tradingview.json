@@ -1,20 +1,40 @@
 {
-    "instrumentStatus": [
+    "instruments": [
         {
-            "instrument": "DAX",
-            "status": "bull"
+            "name": "DAX",
+            "status": "Bull",
+            "price": "14000",
+            "time": "22:30"
         },
         {
-            "instrument": "DAX",
-            "status": "bull"
+            "name": "EUR/USD",
+            "status": "Bear",
+            "price": "8.1",
+            "time": "10:30"
         },
         {
-            "instrument": "DAX",
-            "status": "bull"
+            "name": "EUR/USD",
+            "status": "Bear",
+            "price": "8.1",
+            "time": "11:30"
         },
         {
-            "instrument": "DAX",
-            "status": "bull"
+            "name": "EUR/SEK",
+            "status": "Extended bear",
+            "price": "8.1",
+            "time": "22:18"
+        },
+        {
+            "name": "OMX30",
+            "status": "Extended bull",
+            "price": "8.1",
+            "time": "10:30"
+        },
+        {
+            "name": "NASDAQ",
+            "status": "Extended bull",
+            "price": "8.1",
+            "time": "10:30"
         }
     ]
 }
