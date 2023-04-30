@@ -1,14 +1,25 @@
 import React from 'react'
-import useLoadingHook from './LoadingHook'
+import useLoadingHook from './useLoadingHook'
+import InstrumentBox from './InstrumentBox'
 
 const TradingView = () => {
-    const [loadedData, status] = useLoadingHook('/api/instruments-status')
-    // const { instruments } = loadedData
+  const [loadedData, status] = useLoadingHook('/api/get-instruments')
 
-    console.log('instruments', loadedData)
+  if (status === 'loading') {
+    return <p>Loading</p>
+  }
 
+  if (status === 'error' || (!loadedData || !loadedData.instruments)) {
+    return <p>Error</p>
+  }
 
-    return <p>tradingview component</p>
+  return <>
+    <div className="wrapper">
+      {loadedData && loadedData.instruments.map((instrument) => {
+        return <InstrumentBox key={instrument.name} instrument={instrument} />
+      })}
+    </div>
+  </>
 }
 
 export default TradingView
