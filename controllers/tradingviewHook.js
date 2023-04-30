@@ -15,17 +15,22 @@ module.exports = function handler(req, res) {
         })
     }
 
-    const r = res.req.body.text.split(':')
+    const [instrument, status, price] = res.req.body.text.split(':')
+    const time = new Date().getHours() + ':' + new Date().getMinutes()
 
     const statusObject = {
-        instrument: r[0],
-        status: r[1],
+        instrument,
+        status,
+        time,
+        price,
     }
-    const instrumentStatus = db.get('instrumentStatus')
-    instrumentStatus.push(statusObject)
-    db.set('instrumentStatus', instrumentStatus)
+
+    const instruments = db.get('instruments')
+    instruments.push(statusObject)
+    db.set('instruments', instruments)
 
     res.status(200).json({
         status: 'ok',
     })
 }
+// curl -H 'Content-Type: application/json; charset=utf-8' -d '{"text": "DAX:bull:13550"}' -X POST http://localhost:3000/api/tradingview-hook
