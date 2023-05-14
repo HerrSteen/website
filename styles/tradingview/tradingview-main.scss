@@ -60,7 +60,7 @@ p {
 
   gap: 10px;
 
-  @media screen and(max-width: 700px) {
+  @media screen and (max-width: 700px) {
     margin-left: 0;
     padding: 10px;
 
@@ -73,9 +73,17 @@ p {
   height: 180px;
   padding: 15px;
 
-  border-radius: 1px;
+  border-radius: 7px;
 
-  box-shadow: rgba(0, 0, 0, 0.16) {
+  display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+  // box-shadow: rgba(0, 0, 0, 0.16) {
+  // width: 100vw;
+  // }
+
+  @media screen and (max-width: 700px) {
     width: 100vw;
   }
 
