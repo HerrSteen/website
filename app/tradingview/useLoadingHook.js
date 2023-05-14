@@ -22,5 +22,3 @@ const useLoadingHook = (url) => {
 }
 
 export default useLoadingHook
-
-

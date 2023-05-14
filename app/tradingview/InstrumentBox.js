@@ -2,13 +2,13 @@ import React from 'react'
 
 const getBackgroundClass = (status) => {
   switch (status) {
-    case 'Bull':
+    case 'bull':
       return 'background--bull'
-    case 'Extended bull':
+    case 'extended bull':
       return 'background--extended-bull'
-    case 'Bear':
+    case 'bear':
       return 'background--bear'
-    case 'Extended bear':
+    case 'extended bear':
       return 'background--extended-bear'
     default:
       return ''
