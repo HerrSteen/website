@@ -15,11 +15,11 @@ module.exports = function handler(req, res) {
         })
     }
 
-    const [instrument, status, price] = res.req.body.text.split(':')
+    const [name, status, price] = res.req.body.text.split(':')
     const time = new Date().getHours() + ':' + new Date().getMinutes()
 
     const statusObject = {
-        instrument,
+        name,
         status,
         time,
         price,

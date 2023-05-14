@@ -6,10 +6,11 @@ const databaseURL = 'file:///Users/hector/script/website/databases/tradingview.j
 const folderPath = path.dirname(url.fileURLToPath(databaseURL))
 const file = path.join(folderPath, 'tradingview.json')
 
-const db = new JSONdb(file)
 
 module.exports = function handler(req, res) {
+  const db = new JSONdb(file)
   const instruments = db.get('instruments')
+
   const filteredInstruments = instruments.filter((filterItem, FilterIndex) => {
     const newIndex = instruments.findIndex((findItem) => {
       if (findItem.name === filterItem.name) {
