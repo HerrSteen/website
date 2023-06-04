@@ -2,6 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
+  mode: 'development',
   entry: {
     editor: ['./app/main.js', './styles/editor/editor-main.scss'],
     reddit: ['./app/main.js', './styles/reddit/reddit-main.scss'],
@@ -36,4 +37,3 @@ module.exports = {
       ]
     }
 }
-
