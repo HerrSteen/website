@@ -1,22 +1,23 @@
 import React from 'react'
 import useLoadingHook from './useLoadingHook'
 import InstrumentBox from './InstrumentBox'
+import { selectAllTrades } from './tradingviewSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 const TradingView = () => {
-  const [loadedData, status] = useLoadingHook('/api/get-instruments')
+  const loadingStatus = useLoadingHook('/api/get-instruments')
+  const trades = useSelector(selectAllTrades)
+  const dispatch = useDispatch()
 
-  if (status === 'loading') {
-    return <p>Loading</p>
-  }
-
-  if (status === 'error' || (!loadedData || !loadedData.instruments)) {
-    return <p>Error</p>
+  if (!trades) {
+    return <p>trades is undefined</p>
   }
 
   return <>
     <div className="wrapper">
-      {loadedData && loadedData.instruments.map((instrument) => {
-        return <InstrumentBox key={instrument.name} instrument={instrument} />
+      {Object.keys(trades).map((key) => {
+        const {name, events} = trades[key]
+        return <InstrumentBox key={name} name={name} events={events} />
       })}
     </div>
   </>

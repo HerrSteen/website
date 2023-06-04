@@ -1,24 +1,26 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
+import { selectAllTrades, updateTrades } from './tradingviewSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 const useLoadingHook = (url) => {
-  const [loadedData, setLoadedData] = useState()
   const [status, setStatus] = useState()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     try {
       axios(url).then(result => {
         const { data } = result
-        setLoadedData(data)
         setStatus('loaded')
+        dispatch(updateTrades(data.instruments))
       })
     } catch (e) {
       setStatus('error')
     }
   }, [url])
 
-  return [loadedData, status]
+  return status
 }
 
 export default useLoadingHook

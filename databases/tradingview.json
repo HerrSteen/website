@@ -1,52 +1,59 @@
 {
-    "instruments": [
+  "instruments": {
+    "DAX": {
+      "name": "DAX",
+      "events": [
         {
-            "name": "DAX",
-            "status": "bull",
-            "price": "14000",
-            "time": "22:30"
+          "status": "bull",
+          "time": "21:12",
+          "price": "13551"
         },
         {
-            "name": "EUR/USD",
-            "status": "bear",
-            "price": "8.1",
-            "time": "10:30"
+          "status": "extended bear",
+          "time": "20:59",
+          "price": "13550"
         },
         {
-            "name": "EUR/USD",
-            "status": "bear",
-            "price": "8.1",
-            "time": "11:30"
+          "status": "bull",
+          "time": "21:15",
+          "price": "11.50"
         },
         {
-            "name": "EUR/SEK",
-            "status": "extended bear",
-            "price": "8.1",
-            "time": "22:18"
+          "status": "extended bear",
+          "time": "21:16",
+          "price": "111344"
         },
         {
-            "name": "OMX30",
-            "status": "extended bull",
-            "price": "8.1",
-            "time": "10:30"
-        },
-        {
-            "name": "NASDAQ",
-            "status": "extended bull",
-            "price": "8.1",
-            "time": "10:30"
-        },
-        {
-            "name": "SEB",
-            "status": "bull",
-            "time": "17:52",
-            "price": "13550"
-        },
-        {
-            "name": "DAX",
-            "status": "bull",
-            "time": "21:51",
-            "price": "13550"
+          "status": "bear",
+          "time": "21:18",
+          "price": "111344"
         }
-    ]
+      ]
+    },
+    "EUR/USD": {
+      "name": "EUR/USD",
+      "events": [
+        {
+          "status": "bear",
+          "time": "20:07",
+          "price": "11.51"
+        },
+        {
+          "status": "bear",
+          "time": "20:23",
+          "price": "11.50"
+        }
+      ]
+    },
+    "SBB": {
+      "name": "SBB",
+      "events": [
+        {
+          "status": "bear",
+          "time": "20:23",
+          "price": "11.53"
+        }
+      ]
+    }
+  }
 }
