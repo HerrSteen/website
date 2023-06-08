@@ -17,6 +17,7 @@ const getDate = () => {
   return pad(date.getDay()) + '/' + (date.getMonth())
 }
 module.exports = function handler(req, res) {
+  console.log("res.req.body", res.req.body)
   if (!res.req.body.text) {
     return res.status(200).json({
       status: 'failed',
