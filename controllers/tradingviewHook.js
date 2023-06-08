@@ -18,13 +18,13 @@ const getDate = () => {
 }
 module.exports = function handler(req, res) {
   console.log("res.req.body....", res.req.body)
-  if (!res.req.body.text) {
+  if (!res.req.body) {
     return res.status(200).json({
       status: 'failed',
     })
   }
 
-  const [name, status, price] = res.req.body.text.split(':')
+  const [name, status, price] = res.req.body.split(':')
   const time = getTime()
   const date = getDate()
 
