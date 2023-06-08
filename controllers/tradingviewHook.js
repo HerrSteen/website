@@ -17,7 +17,7 @@ const getDate = () => {
   return pad(date.getDay()) + '/' + (date.getMonth())
 }
 module.exports = function handler(req, res) {
-  console.log("res.req.body", res.req)
+  console.log("res.req.body", res.req.body)
   if (!res.req.body.text) {
     return res.status(200).json({
       status: 'failed',
@@ -58,3 +58,6 @@ module.exports = function handler(req, res) {
 }
 // curl -H 'Content-Type: application/json; charset=utf-8' -d '{"text": "DAX:bull:13550"}' -X POST http://localhost:3000/api/tradingview-hook
 //curl -H 'Content-Type: application/json; charset=utf-8' -d '{"text": "DAX:bull:13550"}' -X POST https://tradingview-494u.onrender.com/tradingview-hook
+
+
+// curl -H 'Content-Type: text/plain; charset=utf-8' -d 'DAX:bull:13550' -X POST http://localhost:3000/api/tradingview-hook
