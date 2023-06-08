@@ -47,7 +47,7 @@ module.exports = function handler(req, res) {
     }
   }
 
-  instruments[key].events.push(event)
+  instruments[key].events.unshift(event)
 
   db.set('instruments', instruments)
 
@@ -56,3 +56,4 @@ module.exports = function handler(req, res) {
   })
 }
 // curl -H 'Content-Type: application/json; charset=utf-8' -d '{"text": "DAX:bull:13550"}' -X POST http://localhost:3000/api/tradingview-hook
+//curl -H 'Content-Type: application/json; charset=utf-8' -d '{"text": "DAX:bull:13550"}' -X POST https://tradingview-494u.onrender.com/tradingview-hook
