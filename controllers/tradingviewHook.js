@@ -1,6 +1,8 @@
 const AWS = require('aws-sdk')
 const s3 = new AWS.S3()
 
+const startDB = require("../databases/tradingview.json")
+
 const pad = (str) => String(str).padStart(2, '0')
 
 const getTime = () => {
@@ -32,15 +34,20 @@ module.exports = async function handler(req, res) {
     price,
   }
 
-  let { instruments } = await s3.getObject({
+  let instruments = await s3.getObject({
     Bucket: 'cyclic-puce-frightened-reindeer-ca-central-1',
     Key: 'some_files/my_file.json',
   }).promise().then((data) => {
+
+    console.log("string..", data.Body.toString('utf-8'))
     const str = data.Body.toString('utf-8')
     return JSON.parse(str)
+  }).catch(() => {
+    console.log("i catch")
+    return startDB
   })
 
-  console.log('---', instruments)
+  console.log("isssnstruments", instruments)
   //format plx
   const key = name
 

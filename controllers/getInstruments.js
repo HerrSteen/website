@@ -5,7 +5,7 @@ const startDB = require("../databases/tradingview.json")
 
 module.exports = async function handler(req, res) {
 
-  let { instruments } = await s3.getObject({
+  let  instruments  = await s3.getObject({
     Bucket: "cyclic-puce-frightened-reindeer-ca-central-1",
     Key: "some_files/my_file.json",
   }).promise().then((data) => {
