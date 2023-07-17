@@ -1,12 +1,19 @@
-const path = require('path')
-const JSONdb = require('simple-json-db')
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3()
 
-const rootFolder = path.resolve(`${__dirname}/../`)
-const file = path.join(rootFolder, 'databases/tradingview.json')
+const startDB = require("../databases/tradingview.json")
 
-module.exports = function handler(req, res) {
-  const db = new JSONdb(file)
-  const instruments = db.get('instruments')
+module.exports = async function handler(req, res) {
+
+  let { instruments } = await s3.getObject({
+    Bucket: "cyclic-puce-frightened-reindeer-ca-central-1",
+    Key: "some_files/my_file.json",
+  }).promise().then((data) => {
+    const str = data.Body.toString('utf-8')
+    return JSON.parse(str)
+  })
+
+  console.log("instruments", instruments)
 
   res.status(200).json({
     instruments,

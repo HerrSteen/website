@@ -1,9 +1,12 @@
 const path = require('path')
-const JSONdb = require('simple-json-db')
+// const JSONdb = require('simple-json-db')
 
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3()
+const startDB = require("../databases/tradingview.json")
 const rootFolder = path.resolve(`${__dirname}/../`)
-const file = path.join(rootFolder, 'databases/tradingview.json')
-const db = new JSONdb(file)
+// const file = path.join(rootFolder, 'databases/tradingview.json')
+// const db = new JSONdb(file)
 
 const pad = (str) => String(str).padStart(2, '0')
 
@@ -16,7 +19,8 @@ const getDate = () => {
   const date = new Date()
   return pad(date.getDay()) + '/' + (date.getMonth())
 }
-module.exports = function handler(req, res) {
+module.exports = async function handler(req, res) {
+  console.log("---", instruments)
   console.log("res.req.body....", res.req.body)
   if (!res.req.body) {
     return res.status(200).json({
@@ -36,8 +40,12 @@ module.exports = function handler(req, res) {
     price,
   }
 
-  const instruments = db.get('instruments')
+  let instruments = await s3.getObject({
+    Bucket: "cyclic-puce-frightened-reindeer-ca-central-1",
+    Key: "some_files/my_file.json",
+  }).promise()
 
+  console.log("---", instruments)
   //format plx
   const key = name
 
@@ -50,7 +58,11 @@ module.exports = function handler(req, res) {
 
   instruments[key].events.unshift(event)
 
-  db.set('instruments', instruments)
+  await s3.putObject({
+    Body: JSON.stringify(instruments),
+    Bucket: "cyclic-puce-frightened-reindeer-ca-central-1",
+    Key: "some_files/my_file.json",
+  }).promise()
 
   res.status(200).json({
     status: 'ok',
