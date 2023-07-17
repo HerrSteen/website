@@ -4,6 +4,34 @@
             "name": "DAX",
             "events": [
                 {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "00:25",
+                    "date": "05/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "00:18",
+                    "date": "05/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "00:18",
+                    "date": "05/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "23:57",
+                    "date": "04/5",
+                    "price": "1111"
+                },
+                {
                     "status": "bull",
                     "time": "21:12",
                     "price": "13551"
@@ -34,6 +62,13 @@
                     "time": "21:26",
                     "date": "03/5",
                     "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "23:55",
+                    "date": "04/5",
+                    "price": "1111"
                 }
             ]
         },
@@ -59,6 +94,18 @@
                     "status": "bear",
                     "time": "20:23",
                     "price": "11.53"
+                }
+            ]
+        },
+        "DAX2": {
+            "name": "DAX2",
+            "events": [
+                {
+                    "name": "DAX2",
+                    "status": "bull",
+                    "time": "23:57",
+                    "date": "04/5",
+                    "price": "1111"
                 }
             ]
         }

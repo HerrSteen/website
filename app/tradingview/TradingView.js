@@ -2,12 +2,11 @@ import React from 'react'
 import useLoadingHook from './useLoadingHook'
 import InstrumentBox from './InstrumentBox'
 import { selectAllTrades } from './tradingviewSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const TradingView = () => {
   const loadingStatus = useLoadingHook('/api/get-instruments')
   const trades = useSelector(selectAllTrades)
-  const dispatch = useDispatch()
 
   if (!trades) {
     return <p>trades is undefined</p>
