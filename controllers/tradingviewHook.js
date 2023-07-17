@@ -22,7 +22,7 @@ module.exports = async function handler(req, res) {
     })
   }
 
-  const [name, status, price] = res.req.body.text.split(':')
+  const [name, status, price] = res.req.body.split(':')
   const time = getTime()
   const date = getDate()
 
