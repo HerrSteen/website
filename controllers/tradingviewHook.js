@@ -1,12 +1,5 @@
-const path = require('path')
-// const JSONdb = require('simple-json-db')
-
-const AWS = require("aws-sdk");
+const AWS = require('aws-sdk')
 const s3 = new AWS.S3()
-const startDB = require("../databases/tradingview.json")
-const rootFolder = path.resolve(`${__dirname}/../`)
-// const file = path.join(rootFolder, 'databases/tradingview.json')
-// const db = new JSONdb(file)
 
 const pad = (str) => String(str).padStart(2, '0')
 
@@ -20,15 +13,14 @@ const getDate = () => {
   return pad(date.getDay()) + '/' + (date.getMonth())
 }
 module.exports = async function handler(req, res) {
-  console.log("---", instruments)
-  console.log("res.req.body....", res.req.body)
+  console.log('res.req.body....', res.req.body)
   if (!res.req.body) {
     return res.status(200).json({
       status: 'failed',
     })
   }
 
-  const [name, status, price] = res.req.body.split(':')
+  const [name, status, price] = res.req.body.text.split(':')
   const time = getTime()
   const date = getDate()
 
@@ -40,12 +32,15 @@ module.exports = async function handler(req, res) {
     price,
   }
 
-  let instruments = await s3.getObject({
-    Bucket: "cyclic-puce-frightened-reindeer-ca-central-1",
-    Key: "some_files/my_file.json",
-  }).promise()
+  let { instruments } = await s3.getObject({
+    Bucket: 'cyclic-puce-frightened-reindeer-ca-central-1',
+    Key: 'some_files/my_file.json',
+  }).promise().then((data) => {
+    const str = data.Body.toString('utf-8')
+    return JSON.parse(str)
+  })
 
-  console.log("---", instruments)
+  console.log('---', instruments)
   //format plx
   const key = name
 
@@ -60,8 +55,8 @@ module.exports = async function handler(req, res) {
 
   await s3.putObject({
     Body: JSON.stringify(instruments),
-    Bucket: "cyclic-puce-frightened-reindeer-ca-central-1",
-    Key: "some_files/my_file.json",
+    Bucket: 'cyclic-puce-frightened-reindeer-ca-central-1',
+    Key: 'some_files/my_file.json',
   }).promise()
 
   res.status(200).json({
@@ -73,3 +68,5 @@ module.exports = async function handler(req, res) {
 
 
 // curl -H 'Content-Type: text/plain; charset=utf-8' -d 'DAX:bull:13550' -X POST https://tradingview-494u.onrender.com/tradingview-hook
+
+// curl -H 'Content-Type: application/json; charset=utf-8' -d '{"text": "DAX:bull:13550"}' -X POST https://puce-frightened-reindeer.cyclic.app/api/tradingview-hook
