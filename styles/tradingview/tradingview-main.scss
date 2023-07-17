@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1ecec;
+}
+
+.hidden {
+  position: fixed;
+
+  opacity: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+a,
+h1,
+h2,
+h3,
+p {
+  font-family: 'Comme', sans-serif;
+
+  text-decoration: none;
+
+  color: #fff;
+}
+
+.background {
+  &--bull {
+    background-color: #089981;
+  }
+
+  &--extended-bull {
+    background-color: #4caf50;
+  }
+
+  &--bear {
+    background-color: #d2042d;
+  }
+
+  &--extended-bear {
+    background-color: #e65100;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  margin-top: 10px;
+  margin-left: 50%;
+
+  transform: translate(-50%);
+
+  gap: 10px;
+
+  @media screen and (max-width: 700px) {
+    margin-left: 0;
+    padding: 10px;
+
+    transform: unset;
+  }
+}
+
+.instrument {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 180px;
+  min-height: 180px;
+
+  border-radius: 7px;
+
+  @media screen and (max-width: 700px) {
+    width: 100vw;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h1,
+  p {
+    margin: 0;
+  }
+
+  &__current {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__events {
+    padding-top: 10px;
+    border-top: 1px solid #fafafa3b;
+    border-image-slice: 1;
+    width:100%;
+    transition: max-height 0.3s;
+
+    max-height: 1300px;
+
+    &--hidden {
+      max-height: 0;
+      padding: 0;
+    }
+
+  }
+
+  &__event {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    border-radius: 4px;
+    margin: 7px;
+    text-transform: capitalize;
+
+    &:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.081);
+    }
+
+    p {
+      width: 33%;
+
+      &:nth-child(2) {
+        text-align: center;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.extended-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-line {
+  width: 100%;
+  height: 4px;
+
+  border-radius: 10px;
+  background-color: red;
+}

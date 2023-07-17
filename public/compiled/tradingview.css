@@ -1,0 +1,143 @@
+/*!***********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/tradingview/tradingview-main.scss ***!
+  \***********************************************************************************************************************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1ecec;
+}
+
+.hidden {
+  position: fixed;
+  opacity: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+a,
+h1,
+h2,
+h3,
+p {
+  font-family: "Comme", sans-serif;
+  text-decoration: none;
+  color: #fff;
+}
+
+.background--bull {
+  background-color: #089981;
+}
+.background--extended-bull {
+  background-color: #4caf50;
+}
+.background--bear {
+  background-color: #d2042d;
+}
+.background--extended-bear {
+  background-color: #e65100;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  gap: 10px;
+}
+@media screen and (max-width: 700px) {
+  .wrapper {
+    margin-left: 0;
+    padding: 10px;
+    transform: unset;
+  }
+}
+
+.instrument {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 180px;
+  min-height: 180px;
+  border-radius: 7px;
+}
+@media screen and (max-width: 700px) {
+  .instrument {
+    width: 100vw;
+  }
+}
+.instrument h1 {
+  font-size: 20px;
+}
+.instrument h1,
+.instrument p {
+  margin: 0;
+}
+.instrument__current {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+.instrument__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.instrument__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.instrument__events {
+  padding-top: 10px;
+  border-top: 1px solid rgba(250, 250, 250, 0.231372549);
+  border-image-slice: 1;
+  width: 100%;
+  transition: max-height 0.3s;
+  max-height: 1300px;
+}
+.instrument__events--hidden {
+  max-height: 0;
+  padding: 0;
+}
+.instrument__event {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+  border-radius: 4px;
+  margin: 7px;
+  text-transform: capitalize;
+}
+.instrument__event:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.081);
+}
+.instrument__event p {
+  width: 33%;
+}
+.instrument__event p:nth-child(2) {
+  text-align: center;
+}
+.instrument__event p:last-child {
+  text-align: right;
+}
+
+.extended-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-line {
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background-color: red;
+}

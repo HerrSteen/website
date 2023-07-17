@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 var stylus = require('stylus')
 var hbs = require('hbs')
+var bodyParser = require('body-parser')
 
 var indexRouter = require('./routes/index')
 var apiRouter = require('./routes/api')
@@ -25,6 +26,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(stylus.middleware(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.use(bodyParser.text())
 
 app.use('/', indexRouter)
 app.use('/api', apiRouter)

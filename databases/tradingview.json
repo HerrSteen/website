@@ -1,0 +1,113 @@
+{
+    "instruments": {
+        "DAX": {
+            "name": "DAX",
+            "events": [
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "00:25",
+                    "date": "05/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "00:18",
+                    "date": "05/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "00:18",
+                    "date": "05/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "23:57",
+                    "date": "04/5",
+                    "price": "1111"
+                },
+                {
+                    "status": "bull",
+                    "time": "21:12",
+                    "price": "13551"
+                },
+                {
+                    "status": "extended bear",
+                    "time": "20:59",
+                    "price": "13550"
+                },
+                {
+                    "status": "bull",
+                    "time": "21:15",
+                    "price": "11.50"
+                },
+                {
+                    "status": "extended bear",
+                    "time": "21:16",
+                    "price": "111344"
+                },
+                {
+                    "status": "bear",
+                    "time": "21:18",
+                    "price": "111344"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "21:26",
+                    "date": "03/5",
+                    "price": "13550"
+                },
+                {
+                    "name": "DAX",
+                    "status": "bull",
+                    "time": "23:55",
+                    "date": "04/5",
+                    "price": "1111"
+                }
+            ]
+        },
+        "EUR/USD": {
+            "name": "EUR/USD",
+            "events": [
+                {
+                    "status": "bear",
+                    "time": "20:07",
+                    "price": "11.51"
+                },
+                {
+                    "status": "bear",
+                    "time": "20:23",
+                    "price": "11.50"
+                }
+            ]
+        },
+        "SBB": {
+            "name": "SBB",
+            "events": [
+                {
+                    "status": "bear",
+                    "time": "20:23",
+                    "price": "11.53"
+                }
+            ]
+        },
+        "DAX2": {
+            "name": "DAX2",
+            "events": [
+                {
+                    "name": "DAX2",
+                    "status": "bull",
+                    "time": "23:57",
+                    "date": "04/5",
+                    "price": "1111"
+                }
+            ]
+        }
+    }
+}

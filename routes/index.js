@@ -22,4 +22,14 @@ router.get('/reddit', function (req, res) {
   })
 })
 
+router.get('/tradingview', function (req, res) {
+  res.render('tradingview', {
+    layout: false,
+    title: 'tradingview',
+    reactData: {
+      route: 'tradingview',
+    }
+  })
+})
+
 module.exports = router

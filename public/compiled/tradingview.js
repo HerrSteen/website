@@ -1392,14 +1392,14 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ../cj
 
 /***/ }),
 
-/***/ "./styles/reddit/reddit-main.scss":
-/*!****************************************!*\
-  !*** ./styles/reddit/reddit-main.scss ***!
-  \****************************************/
+/***/ "./styles/tradingview/tradingview-main.scss":
+/*!**************************************************!*\
+  !*** ./styles/tradingview/tradingview-main.scss ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://website/./styles/reddit/reddit-main.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://website/./styles/tradingview/tradingview-main.scss?");
 
 /***/ }),
 
@@ -4558,7 +4558,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./app/main.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./styles/reddit/reddit-main.scss");
+/******/ 	var __webpack_exports__ = __webpack_require__("./styles/tradingview/tradingview-main.scss");
 /******/ 	
 /******/ })()
 ;
